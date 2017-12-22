@@ -1,4 +1,5 @@
-示例程序1.1
+
+示例程序 Sample Code 1.1
 REPORT zrep_error_check_01.
 
 DATA:
