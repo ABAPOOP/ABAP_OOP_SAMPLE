@@ -1,5 +1,4 @@
-
-Ê¾Àı³ÌĞò Sample Code 1.1
+ï»¿ç¤ºä¾‹ç¨‹åº1.1
 REPORT zrep_error_check_01.
 
 DATA:
