@@ -1,8 +1,0 @@
-﻿"示例程序4.3
-*OOP support this format for calling method -
-CALL METHOD lo_account_balance->deposit
-  EXPORTING
-    im_deposit_amount   = p_deposit
-  RECEIVING
-    re_accounnt_balance = l_balance. 
-
