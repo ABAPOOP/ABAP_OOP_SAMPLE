@@ -1,4 +1,4 @@
-Ê¾Àý³ÌÐò2.1
+ï»¿"ç¤ºä¾‹ç¨‹åº2.1
 REPORT zrep_cls_07.
 
 DATA gv_top(20) TYPE c VALUE 'Top of the World'.
@@ -11,10 +11,10 @@ DATA: gv_char(20) TYPE c,
 
 
 DO 6 TIMES.
-  "±ÜÃâÔÚÑ­»·ÖÐ¶¨Òå²¢³õÊ¼»¯±äÁ¿
-  "²¢²»ÊÇÃ¿´ÎÑ­»·¶¼»áÖØÐÂ³õÊ¼»¯±äÁ¿
+  "é¿å…åœ¨å¾ªçŽ¯ä¸­å®šä¹‰å¹¶åˆå§‹åŒ–å˜é‡
+  "å¹¶ä¸æ˜¯æ¯æ¬¡å¾ªçŽ¯éƒ½ä¼šé‡æ–°åˆå§‹åŒ–å˜é‡
   DATA: gv_elevation TYPE i VALUE 6688.
-  "Èç¹ûÒ»¶¨Òª¶¨Òå,Ñ­»·ÖÐÒª½«±äÁ¿¼°Ê±¸³Öµ
+  "å¦‚æžœä¸€å®šè¦å®šä¹‰,å¾ªçŽ¯ä¸­è¦å°†å˜é‡åŠæ—¶èµ‹å€¼
   "gv_elevation = 6688.
   IF sy-index = 3.
     gv_elevation = 8848.
