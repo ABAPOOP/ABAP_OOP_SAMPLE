@@ -61,7 +61,7 @@ TRY.
 ENDTRY.
 
 "第3种向下转型，如果子类经过向上转型到父类，则父类对象可以直接向下强转型
-"向下强转型，采用 “MOVE ？TO”进行赋值
+"向下强转型，采用 “CAST”进行赋值
 
 " 先创建对象
 CREATE OBJECT go_vegetarian_food TYPE zcl_vegetarian_food.
@@ -88,7 +88,7 @@ CREATE OBJECT go_pear TYPE zcl_pear.
 " 没有经过子类的向上转型
 "go_vegetarian_food = go_pear.
 
-" 然后用“CAST”下转型,会引发错误。
+" 此时用“CAST”下转型,会引发错误。
 TRY.
     CAST zcl_pear( go_vegetarian_food  ).
     WRITE: / 'CAST zcl_pear( go_vegetarian_food  ) - Correct'.
