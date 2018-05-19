@@ -14,7 +14,7 @@ START-OF-SELECTION.
   CREATE OBJECT go_hua_mulan.
 
   WRITE : /, / '1. 测试子类对象花木兰:'.
-  "自我介绍用的是花木兰的信息，我是华木兰，女
+  "自我介绍用的是花木兰的信息，我是花木兰，女
   CALL METHOD go_hua_mulan->setup_profile
     EXPORTING
       iv_name      = '花木兰'
@@ -28,8 +28,8 @@ START-OF-SELECTION.
 
   "2. 创建花弧的对象实例
   CREATE OBJECT go_hua_hu.
-  WRITE : /, / '2. 测试子类对象华弧:'.
-  "调用的是父类的自我介绍：我是华弧，男
+  WRITE : /, / '2. 测试子类对象花弧:'.
+  "调用的是父类的自我介绍：我是花弧，男
 
   CALL METHOD go_hua_hu->setup_profile
     EXPORTING
@@ -52,17 +52,17 @@ START-OF-SELECTION.
   go_civi_solider = go_hua_hu.
 
   "向上转型，对象是go_civi_solider，
-  "此时是查看子类对象华弧的能力
+  "此时是查看子类对象花弧的能力
   go_civi_solider = go_hua_hu.
 
-  "在军中报名: 调用的是父类的自我介绍：我是华弧，男
+  "在军中报名: 调用的是父类的自我介绍：我是花弧，男
   CALL METHOD go_civi_solider->self_introduce.
-  "如果华弧在军中打仗: 华弧不能负担作战任务，只能充当牺牲品
+  "如果花弧在军中打仗: 花弧不能负担作战任务，只能充当牺牲品
   CALL METHOD go_civi_solider->show_capability.
 
   "4. 木兰决定代父从军
   WRITE : /, / '4. 木兰决定代父从军'.
-  "子类花木兰声称自己就是华弧，准备以父亲的名义参军
+  "子类花木兰声称自己就是花弧，准备以父亲的名义参军
   CALL METHOD go_hua_mulan->setup_profile
     EXPORTING
       iv_name      = '花弧'
@@ -70,11 +70,11 @@ START-OF-SELECTION.
 
   " 5.将花木兰对象实例向上转型
   WRITE : /, / '5. 测试子类对象向上转型到父类对象，多态 - 代父从军:'.
-  "向上转型，对象是go_civi_solider，名义上是华弧在参军，其实是花木兰女扮男装代父从军
+  "向上转型，对象是go_civi_solider，名义上是花弧在参军，其实是花木兰女扮男装代父从军
   "向上转型后，对象go_hua_mulan和go_civi_solider是指向同一个内存区域
   go_civi_solider = go_hua_mulan.
 
-  "在军中报名: 调用的是重新声明过的自我介绍：我是华弧，男
+  "在军中报名: 调用的是重新声明过的自我介绍：我是花弧，男
   CALL METHOD go_civi_solider->self_introduce.
   "在军中打仗: 打仗的时候，其实上阵打仗的是花木兰，打仗的功夫也是花木兰自己的能力
   CALL METHOD go_civi_solider->show_capability.
