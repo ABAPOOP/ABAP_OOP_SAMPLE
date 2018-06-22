@@ -4,5 +4,5 @@ CALL METHOD lo_account_balance->deposit
   EXPORTING
     im_deposit_amount   = p_deposit
   RECEIVING
-    re_accounnt_balance = l_balance. 
+    re_account_balance = l_balance. 
 
