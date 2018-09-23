@@ -2,7 +2,7 @@
 REPORT zrep_cls_012.
 DATA :
       "declare super class
-      go_civi_soldier TYPE REF TO zcl_beichao_civilian,
+      go_civi_solider TYPE REF TO zcl_beichao_civilian,
       "declare sub class
       go_hua_hu TYPE REF TO zcl_huahu,
       "declare sub class
@@ -46,19 +46,19 @@ START-OF-SELECTION.
   WRITE : /, / '3. 测试子类对象向上转型到父类对象，多态 - 父亲无法打仗:'.
 
   "父类是虚拟类，不能直接创建对象, 但可以依据实现所有方法的子类类型创建对象
-  "CREATE OBJECT go_civi_soldier TYPE zcl_huahu.
+  "CREATE OBJECT go_civi_solider TYPE zcl_huahu.
 
   "虚拟类对象变量不经创建，直接由子类对象赋值也可以
-  go_civi_soldier = go_hua_hu.
+  go_civi_solider = go_hua_hu.
 
-  "向上转型，对象是go_civi_soldier，
+  "向上转型，对象是go_civi_solider，
   "此时是查看子类对象花弧的能力
-  go_civi_soldier = go_hua_hu.
+  go_civi_solider = go_hua_hu.
 
   "在军中报名: 调用的是父类的自我介绍：我是花弧，男
-  CALL METHOD go_civi_soldier->self_introduce.
+  CALL METHOD go_civi_solider->self_introduce.
   "如果花弧在军中打仗: 花弧不能负担作战任务，只能充当牺牲品
-  CALL METHOD go_civi_soldier->show_capability.
+  CALL METHOD go_civi_solider->show_capability.
 
   "4. 木兰决定代父从军
   WRITE : /, / '4. 木兰决定代父从军'.
@@ -70,23 +70,23 @@ START-OF-SELECTION.
 
   " 5.将花木兰对象实例向上转型
   WRITE : /, / '5. 测试子类对象向上转型到父类对象，多态 - 代父从军:'.
-  "向上转型，对象是go_civi_soldier，名义上是花弧在参军，其实是花木兰女扮男装代父从军
-  "向上转型后，对象go_hua_mulan和go_civi_soldier是指向同一个内存区域
-  go_civi_soldier = go_hua_mulan.
+  "向上转型，对象是go_civi_solider，名义上是花弧在参军，其实是花木兰女扮男装代父从军
+  "向上转型后，对象go_hua_mulan和go_civi_solider是指向同一个内存区域
+  go_civi_solider = go_hua_mulan.
 
   "在军中报名: 调用的是重新声明过的自我介绍：我是花弧，男
-  CALL METHOD go_civi_soldier->self_introduce.
+  CALL METHOD go_civi_solider->self_introduce.
   "在军中打仗: 打仗的时候，其实上阵打仗的是花木兰，打仗的功夫也是花木兰自己的能力
-  CALL METHOD go_civi_soldier->show_capability.
+  CALL METHOD go_civi_solider->show_capability.
   "多态的代价，不能调用子类新增加的方法，军中也不允许花木兰使用自己新增加的方法
-  "CALL METHOD go_civi_soldier->make_up.
+  "CALL METHOD go_civi_solider->make_up.
 
 
   " 6.花木兰回乡团聚
   WRITE : / , /'6. 测试父类对象向下强转型到子类对象, 花木兰重新做自己:'.
   "不必按子类类型重新创建父类对象, 因为子类曾经向上转型，向下强转型可以直接进行
   "向下强转型，花木兰自己回家重新过女儿的生活
-  go_hua_mulan ?= go_civi_soldier.
+  go_hua_mulan ?= go_civi_solider.
   "花木兰回家，重新声明自己其实是女儿的花木兰
   CALL METHOD go_hua_mulan->setup_profile
     EXPORTING
